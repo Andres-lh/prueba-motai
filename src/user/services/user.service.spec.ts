@@ -74,7 +74,9 @@ describe('UserService', () => {
 
       mockUserRepo.findOne.mockResolvedValue({ id: 'existing' });
 
-      await expect(service.create(createUserDto)).rejects.toThrow(ConflictException);
+      await expect(service.create(createUserDto)).rejects.toThrow(
+        ConflictException,
+      );
     });
   });
 });
