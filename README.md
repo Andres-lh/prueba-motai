@@ -112,6 +112,10 @@ npm run test:e2e
 npm run test:cov
 ```
 
+## Documentación API
+
+Puedes acceder a la documentación de la API en la ruta `/api`.
+
 ## Licencia
 
 Este proyecto está bajo la licencia [MIT](LICENSE).
