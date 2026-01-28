@@ -97,11 +97,6 @@ npm run docker:dev
 npm run docker:down
 ```
 
-O usando docker-compose directamente:
-```bash
-docker-compose up
-```
-
 ## Pruebas (Testing)
 
 El proyecto cuenta con pruebas unitarias y de integración (e2e).
