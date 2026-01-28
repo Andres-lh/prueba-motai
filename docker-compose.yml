@@ -1,0 +1,40 @@
+services:
+  db:
+    image: postgres:16
+    profiles: ["development", "production"]
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      
+  app-dev:
+    profiles: ["development"]
+    build:
+      context: .
+      target: dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - .env.development
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+
+  app:
+    profiles: ["production"]
+    build:
+      context: .
+      target: prod
+    env_file:
+      - .env.production
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:
