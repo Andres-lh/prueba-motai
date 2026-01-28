@@ -1,4 +1,3 @@
-// test/config/ormconfig.e2e.ts
 import { newDb } from 'pg-mem';
 import { User } from '../../src/user/entities/user.entity';
 import { DataSource } from 'typeorm';
@@ -7,7 +6,6 @@ import { v4 as uuidv4 } from 'uuid';
 export const setupDatabase = async (): Promise<DataSource> => {
   const db = newDb();
 
-  // Minimal PostgreSQL functions
   db.public.registerFunction({
     name: 'uuid_generate_v4',
     implementation: uuidv4,
