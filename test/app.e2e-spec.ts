@@ -11,7 +11,6 @@ describe('AppController (e2e)', () => {
   let dataSource: DataSource;
 
   beforeEach(async () => {
-
     dataSource = await setupDatabase();
 
     const moduleFixture: TestingModule = await Test.createTestingModule({
